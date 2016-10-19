@@ -1,0 +1,182 @@
+body {
+  font-family: "Microsoft YaHei UI", sans-serif;
+}
+.navbar-collapse {
+  overflow: hidden;
+}
+.navbar-default {
+  width: 100%;
+  margin-bottom: 0;
+  border-radius: 0;
+  position: fixed;
+  z-index: 999;
+  background-color: transparent;
+  border-color: transparent;
+  transition: all ease-in 0.2s;
+}
+.navbar-default .navbar-nav {
+  margin: 0 -25px;
+}
+.navbar-default .navbar-nav li a {
+  color: #fff;
+}
+.navbar-default .navbar-nav li a:hover {
+  color: #fff;
+  background-color: #162436;
+}
+.navbar-default .navbar-nav .active a {
+  color: #fff;
+  border-top: 3px solid #f00;
+  background-color: transparent;
+  padding-top: 12px;
+}
+.navbar-header .logo {
+  height: 32px;
+  margin-top: -5px;
+  margin-left: -2px;
+}
+#fp-nav ul li {
+  margin: 16px;
+}
+#fp-nav ul li a span {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #6090B6;
+  background-color: transparent;
+}
+#fp-nav ul li a.active span {
+  margin: -2px 0 0 -2px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #6090B6;
+  background-color: #6090B6;
+}
+.section {
+  /*padding-top: 150px;*/
+  text-align: center;
+  color: #707D8D;
+}
+.section .fp-tableCell{
+  padding-top: 100px;
+}
+.section img {
+  width: 100%;
+}
+.section h2 {
+  font-size: 44px;
+  margin-bottom: 46px;
+}
+.section .desc {
+  font-size: 20px;
+}
+.section .section-left {
+  padding-left: 10%;
+}
+.section .section-right {
+  float: right;
+}
+.section.section-one {
+  background-image: linear-gradient(to bottom, #4E7E99, #293D56);
+}
+.section.section-one .echarts3,
+.section.section-one .shadow {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  margin-top: -10px;
+}
+.section.section-one .echarts3{
+  margin-top: 50px;
+}
+.section.section-one .shadow {
+  margin-top: 16px;
+}
+.section.section-one .lines {
+  margin-top: 120px;
+}
+.section.section-two h2 {
+  margin-top: 60px;
+  color: #fff;
+}
+.section.section-three,
+.section.section-four {
+  text-align: left;
+}
+.section.section-three img,
+.section.section-four img {
+  width: 90%;
+}
+.section.section-five .row {
+  text-align: center;
+}
+.section.section-five h2 {
+  margin-bottom: 24px;
+}
+.section.section-five .chart-imgs {
+  height: 350px;
+  line-height: 350px;
+}
+.section.section-five .chart-imgs img {
+  width: 8%;
+  margin: 0 1%;
+  list-style: none;
+  border: 1px solid #C0CCDA;
+  border-radius: 100%;
+  transition: all ease-out 0.2s;
+}
+.section.section-five .chart-imgs img.active {
+  transform: scale(1.5);
+  margin: 0 3%;
+  border: 1px solid #86CEF2;
+  box-shadow: 0 0 10px #b7c4d4;
+}
+.section .start-btn {
+  width: 210px;
+  height: 50px;
+  line-height: 50px;
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 100px;
+  font-size: 21px;
+  color: #fff;
+  text-decoration: none;
+  background-color: #5CB6E3;
+}
+.section .start-btn:hover {
+  background-color: #91D7F7;
+}
+footer {
+  padding: 35px 5%;
+  background-color: #2A3C54;
+  color: #fff;
+  font-size: 12px;
+  text-align: left;
+}
+footer h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+footer ul {
+  width: 28%;
+  padding: 0;
+  float: left;
+}
+footer ul.more {
+  width: 10%;
+}
+footer ul.more-product a {
+  color: #337ab7;
+}
+footer ul li {
+  list-style: none;
+  line-height: 22px;
+}
+footer ul li a {
+  color: #fff;
+}
+footer .copyright {
+  border-top: 1px solid #556376;
+  margin-top: 40px;
+  padding-top: 20px;
+  text-align: center;
+}

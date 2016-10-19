@@ -4,7 +4,7 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto","Microsoft JhengHei","Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #606c71; }
@@ -73,23 +73,26 @@ a {
 
 .project-name {
   margin-top: 0;
-  margin-bottom: 0.1rem; }
+  margin-bottom: 0.1rem;
+  font-size: 4.5rem;
+  font-weight: 300;
+   }
 
 @media screen and (min-width: 64em) {
   .project-name {
-    font-size: 3.25rem; } }
+    font-size: 4.2rem; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .project-name {
-    font-size: 2.25rem; } }
+    font-size: 4rem; } }
 
 @media screen and (max-width: 42em) {
   .project-name {
-    font-size: 1.75rem; } }
+    font-size: 3.8rem; } }
 
 .project-tagline {
   margin-bottom: 2rem;
-  font-weight: normal;
+  font-weight: 100;
   opacity: 0.7; }
 
 @media screen and (min-width: 64em) {
@@ -103,9 +106,21 @@ a {
 @media screen and (max-width: 42em) {
   .project-tagline {
     font-size: 1rem; } }
-
+    
+.main-content p{
+  font-size: 0.9rem;
+  color: #999;
+}
 .main-content :first-child {
   margin-top: 0; }
+.main-content .date{
+  float: right;
+}
+.main-content .qr{
+  display: block;
+  max-width: 5rem;
+  margin-top: 1rem;
+}
 .main-content img {
   max-width: 100%; }
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
@@ -223,6 +238,7 @@ a {
 .site-footer {
   padding-top: 2rem;
   margin-top: 2rem;
+  text-align: center;
   border-top: solid 1px #eff0f1; }
 
 .site-footer-owner {
@@ -230,7 +246,8 @@ a {
   font-weight: bold; }
 
 .site-footer-credits {
-  color: #819198; }
+  color: #819198;
+   }
 
 @media screen and (min-width: 64em) {
   .site-footer {
