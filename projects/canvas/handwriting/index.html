@@ -1,0 +1,196 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="css/handwriting.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+</head>
+<body>
+    <canvas id="draw" style="display:block;margin:50px auto">
+        您的浏览器不支持哦
+    </canvas>
+    <div id="controller">
+        <a href="#" class="btn btn-red"></a>
+        <a href="#" class="btn btn-blue"></a>
+        <a href="#" class="btn btn-green"></a>
+        <a href="#" class="btn btn-yellow"></a>
+        <a href="#" class="btn btn-black"></a>
+        <a href="#" class="btn btn-clear">清除</a>
+    </div>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+    <script>
+    var isMouseDown = false;
+    var lastLoc = {x:0,y:0};
+    var lastTimeStamp = 0;
+    var lineWidth = 30;
+    var lastLineWidth = 0;
+    var strokeColor = "black";
+    var touch = null;
+
+    var canvas = document.getElementById("draw");
+    canvas.width = Math.min(800,$(window).width()-20);
+    canvas.height = canvas.width;
+    var context = canvas.getContext("2d");
+
+    // 按钮外层宽度自适应
+    $("#controller").css("width",canvas.width);
+    // 绑定按钮事件   
+    $(".btn-clear").on("click",function(){
+        context.clearRect(0,0,canvas.width,canvas.width);
+        drawGrid();
+    })
+    // 更改字体颜色
+    $(".btn:not(.btn-clear)").on("click",function(){
+        $(".btn").removeClass("btn-visited");
+        $(this).addClass("btn-visited");
+        strokeColor = $(this).css("background-color");
+    })
+
+    drawGrid()
+    // 田字格
+    function drawGrid(){
+        context.save();
+
+        context.strokeStyle = "#f00";
+        context.lineWidth = 6;
+
+        // 外边框
+        context.beginPath();
+        context.moveTo(3,3);
+        context.lineTo(canvas.width-3,3);
+        context.lineTo(canvas.width-3,canvas.height-3);
+        context.lineTo(3,canvas.height-3);
+        context.closePath();
+        context.stroke();
+
+        context.lineWidth = 1;
+        // 两条斜线
+        context.lineTo(canvas.width,canvas.height);
+        context.moveTo(canvas.width,0);
+        context.lineTo(0,canvas.height);
+        // 横竖线
+        context.moveTo(canvas.width/2,0);
+        context.lineTo(canvas.width/2,canvas.height);
+        context.moveTo(0,canvas.height/2);
+        context.lineTo(canvas.width,canvas.height/2);
+        context.stroke();
+
+        context.restore();
+    }
+
+    // 获取canvas内坐标
+    function getCanvasLoc(x,y){
+        var bbox = canvas.getBoundingClientRect();
+        return {x:Math.round(x-bbox.left),y:Math.round(y-bbox.top)};
+    }
+
+    // 获取笔画速度，速度=路程/时间
+    function getDrawSpeed(s,t){
+        var maxSpeed = 10;
+        var minSpeed = 0.05;
+        var maxLineWidth = 26;
+        var minLineWidth = 2;
+        var v = s/t;
+
+        // console.log(v)
+        if(t==0){
+            lineWidth = maxLineWidth;
+            return;
+        }
+        if(v<minSpeed){
+            lineWidth = maxLineWidth;
+        }else if(v>maxSpeed){
+            lineWidth = minLineWidth;
+        }else{
+            // lineWidth = 30-Math.round((v-0.1)/(1-0.1)*(30-10));
+            lineWidth = (maxLineWidth-minLineWidth)-Math.round((v-minSpeed)/(maxSpeed-minSpeed)*(maxLineWidth-minLineWidth));
+        }
+        lineWidth = lastLineWidth*4/5 + lineWidth*1/5;
+    }
+
+    // 笔画开始
+    function beginStroke(point){
+        isMouseDown = true;
+        // console.log("down")
+        lastLoc = getCanvasLoc(point.x,point.y);
+        lastTimeStamp = new Date().getTime();
+    }
+    // 笔画移动中
+    function moveStroke(point){
+        var curLoc = getCanvasLoc(point.x,point.y);
+        var curTimeStamp = new Date().getTime();
+        var s = Math.sqrt((curLoc.x-lastLoc.x)*(curLoc.x-lastLoc.x)+(curLoc.y-lastLoc.y)*(curLoc.y-lastLoc.y));
+        var t = curTimeStamp - lastTimeStamp;
+        getDrawSpeed(s,t)
+        // console.log(s/t)
+
+        context.strokeStyle = strokeColor;
+        context.lineWidth = lineWidth;
+        context.lineCap = "round";
+        context.lineJoin = "round";
+        context.beginPath();
+        context.moveTo(lastLoc.x,lastLoc.y);
+        context.lineTo(curLoc.x,curLoc.y);
+        context.stroke(); 
+
+        lastLoc = curLoc;
+        lastTimeStamp = curTimeStamp;
+        lastLineWidth = lineWidth;
+    }
+    // 笔画结束
+    function endStroke(){
+        isMouseDown = false;
+    }
+
+    canvas.onmousedown = function(e){
+        e.preventDefault();
+        beginStroke({x:e.pageX,y:e.pageY});
+    }
+
+    canvas.onmouseup = function(e){
+        e.preventDefault();
+        endStroke()
+    }
+
+    canvas.onmouseout = function(e){
+        e.preventDefault();
+        endStroke()
+    }
+
+    canvas.onmousemove = function(e){
+        e.preventDefault();
+        if(isMouseDown){
+            // console.log("move")
+            moveStroke({x:e.pageX,y:e.pageY});
+        }
+    }
+
+    canvas.addEventListener("touchstart",function(e){
+        e.preventDefault();
+        touch = e.touches[0];
+        beginStroke({x:touch.pageX,y:touch.pageY});
+    })
+    canvas.addEventListener("touchend",function(e){
+        e.preventDefault();
+        endStroke();
+    })
+    canvas.addEventListener("touchmove",function(e){
+        e.preventDefault();
+        if(isMouseDown){
+            touch = e.touches[0];
+            moveStroke({x:touch.pageX,y:touch.pageY});
+        }
+    })
+    </script>
+    
+</body>
+</html>
