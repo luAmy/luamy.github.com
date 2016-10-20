@@ -1,5 +1,6 @@
 body {
   font-family: "Microsoft YaHei UI", sans-serif;
+  -webkit-tap-highlight-color:transparent;
 }
 .navbar-collapse {
   overflow: hidden;
@@ -125,6 +126,9 @@ body {
   margin-top: 50px;
 }
 @media screen and (max-width:42em){
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a{
+    color: #fff;
+  }
   .section.section-one .echarts3{
     width: 70%;
     margin-top: 1rem;
