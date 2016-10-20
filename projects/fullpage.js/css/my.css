@@ -129,6 +129,15 @@ body {
     width: 70%;
     margin-top: 1rem;
   }
+  .section-two img{
+    width: 220%;
+  }
+  .section-five .fp-tableCell{
+    padding-top: 0;
+  }
+  .section-five .row{
+    margin-bottom:-150px;
+  }
 }
 .section.section-one .shadow {
   margin-top: 16px;
@@ -173,7 +182,7 @@ body {
   .section.section-two .fp-tableCell h2 {
     width: 24rem;
     margin: -1rem auto 4rem;
-    /*margin-top: -1rem;*/
+    margin-top: 5rem;
   }
   .section .row p {
     font-size: 1.8rem;
