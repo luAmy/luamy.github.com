@@ -7,7 +7,8 @@ body {
   font-family: "Roboto","Microsoft JhengHei","Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #606c71; }
+  color: #606c71;
+  background-color: #fff; }
 
 a {
   color: #1e6bb8;
@@ -75,7 +76,7 @@ a {
   margin-top: 0;
   margin-bottom: 0.1rem;
   font-size: 4.5rem;
-  font-weight: 300;
+  font-weight: 100;
    }
 
 @media screen and (min-width: 64em) {
@@ -86,9 +87,9 @@ a {
   .project-name {
     font-size: 4rem; } }
 
-@media screen and (max-width: 42em) {
+/*@media screen and (max-width: 42em) {
   .project-name {
-    font-size: 3.8rem; } }
+    font-weight: 100; } }*/
 
 .project-tagline {
   margin-bottom: 2rem;
