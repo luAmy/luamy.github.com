@@ -205,15 +205,36 @@
                 }
             }
         });
-//        img-lists
-        $(".chart-imgs").delegate("img","mouseenter",function(){
-            var active = $(this);
-            if(active.hasClass("active")){
-                return;
+
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = ["Android", "iPhone",
+                        "SymbianOS", "Windows Phone",
+                        "iPad", "iPod"];
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
             }
-            active.parent().find(".active").removeClass("active");
-            active.addClass("active");
-        })
+            return flag;
+        }
+
+        // img-lists
+        if(IsPC()){
+            $(".chart-imgs").delegate("img","mouseenter",function(){
+                var active = $(this);
+                if(active.hasClass("active")){
+                    return;
+                }
+                active.parent().find(".active").removeClass("active");
+                active.addClass("active");
+            })
+        }else{
+            $(".chart-imgs").find(".active").removeClass("active");
+        }
+        
 //        $(".chart-imgs img").hover(function(){
 //            var active = $(this);
 //            if(active.hasClass("active")){

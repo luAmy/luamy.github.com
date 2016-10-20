@@ -1,6 +1,21 @@
 * {
   box-sizing: border-box; }
 
+::selection {
+background-color:#319F81;
+color: #fff;
+}
+
+::-moz-selection {
+background-color:#319F81;
+color: #fff;
+}
+
+::-webkit-selection {
+background-color:#319F81;
+color: #fff;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -79,9 +94,9 @@ a {
   font-weight: 100;
    }
 
-@media screen and (min-width: 64em) {
+/*@media screen and (min-width: 64em) {
   .project-name {
-    font-size: 4.2rem; } }
+    font-size: 4.5rem; } }*/
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .project-name {
