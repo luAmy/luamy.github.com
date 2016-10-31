@@ -2,18 +2,18 @@
   box-sizing: border-box; }
 
 ::selection {
-background-color:#319F81;
-color: #fff;
+  background-color:#319F81;
+  color: #fff;
 }
 
 ::-moz-selection {
-background-color:#319F81;
-color: #fff;
+  background-color:#319F81;
+  color: #fff;
 }
 
 ::-webkit-selection {
-background-color:#319F81;
-color: #fff;
+  background-color:#319F81;
+  color: #fff;
 }
 
 body {
