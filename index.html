@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Luamy.GitHub.com by luAmy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1，user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
   <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
   <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
@@ -11,9 +11,10 @@
 </head>
 <body>
   <section class="page-header">
+    <div class="cover"></div>
     <h1 class="project-name">Amy's Blog</h1>
     <h2 class="project-tagline">code &amp; design</h2>
-  </section>
+  </section> 
   
   <section class="main-content">
     <h3><a class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>练习</h3>
@@ -26,11 +27,35 @@
     <p><a href="http://www.appcan.cn">appcan官网改版</a><span class="date">2015.9</span></p>
 
     <footer class="site-footer">
-      <span class="site-footer-credits">不积跬步,无以成千里</span>
+      <span class="site-footer-credits"><a href="#" class="contact">Contact Me</a></span>
     </footer>
 
   </section>
+  <script>
+    (function(){
+      var text = "TEL:13343409426&nbsp;&nbsp;&nbsp;&nbsp;QQ:735937628";
 
+      function $ (obj){
+        return document.querySelector(obj);
+      }
+      //dom的对象 HTMLElement,可给dom添加方法。
+      // HTMLElement.prototype.bind = function(e,fun){
+      //   this["on"+e] = fun;
+      // }
+      // $(".cover").bind("click",function(){
+      //   alert(0)
+      // });
+
+      $(".cover").style.height = $(".page-header").offsetHeight + "px";
+
+      $(".contact").onclick = function(e){
+        e.preventDefault();
+        console.log(this)
+        this.parentNode.innerHTML = text;
+        this.remove();
+      }
+    })()
+  </script>
 
 </body>
 </html>
