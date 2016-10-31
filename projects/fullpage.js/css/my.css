@@ -25,12 +25,19 @@ body {
   color: #fff;
   background-color: #162436;
 }
+.navbar-default .navbar-nav li li a:hover {
+  background-color: #A9334C;
+}
+.navbar-default .navbar-nav > li > a:focus{
+  color: #fff;
+}
 .navbar-default .navbar-nav .active a {
   color: #fff;
   border-top: 3px solid #f00;
   background-color: transparent;
   padding-top: 12px;
 }
+
 @media screen and (max-width: 42em){
   .navbar-default .navbar-collapse{
     border: none;
