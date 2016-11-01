@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <canvas id="draw" style="display:block;margin:50px auto">
+    <canvas id="draw" style="display:block;margin:20px auto">
         您的浏览器不支持哦
     </canvas>
     <div id="controller">
@@ -36,6 +36,11 @@
     var strokeColor = "black";
     var touch = null;
 
+    var maxSpeed = 10;
+    var minSpeed = 0.05;
+    var maxLineWidth = 26;
+    var minLineWidth = 2;
+    
     var canvas = document.getElementById("draw");
     canvas.width = Math.min(600,$(window).width()-20);
     canvas.height = canvas.width;
@@ -44,7 +49,8 @@
     // 按钮外层宽度自适应
     $("#controller").css("width",canvas.width);
     // 绑定按钮事件   
-    $(".btn-clear").on("click",function(){
+    $(".btn-clear").on("click",function(e){
+        e.preventDefault();
         context.clearRect(0,0,canvas.width,canvas.width);
         drawGrid();
     })
@@ -95,12 +101,7 @@
 
     // 获取笔画速度，速度=路程/时间
     function getDrawSpeed(s,t){
-        var maxSpeed = 10;
-        var minSpeed = 0.05;
-        var maxLineWidth = 26;
-        var minLineWidth = 2;
         var v = s/t;
-
         // console.log(v)
         if(t==0){
             lineWidth = maxLineWidth;
