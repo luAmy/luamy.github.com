@@ -76,8 +76,8 @@ a {
   background:url(imgs/bg.jpg);
   background-size:100%;*/
   background-color: #159957;
-  /*background-image: linear-gradient(120deg, #155799, #159957); */
-  background-image: linear-gradient(120deg, #195794, #23b36b);
+  background-image: linear-gradient(120deg, #155799, #159957); 
+  /*background-image: linear-gradient(120deg, #195794, #23b36b);*/
 }
 
 .cover{
