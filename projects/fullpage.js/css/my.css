@@ -100,7 +100,7 @@ body {
   color: #707D8D;
 }
 
-.section .fp-tableCell{
+.section:not(.section-two) .fp-tableCell{
   padding-top: 100px;
 }
 .section img {
@@ -157,7 +157,8 @@ body {
   margin-top: 120px;
 }
 .section.section-two h2 {
-  margin-top: 60px;
+  margin-top: 100px;
+  margin-bottom: 0;
   color: #fff;
 }
 .section.section-three,

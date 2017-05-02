@@ -72,11 +72,13 @@ a {
 .page-header {
   color: #fff;
   text-align: center;
-  background-color: #3E7EAF;
+  /*background-color: #3E7EAF;
   background:url(imgs/bg.jpg);
-  background-size:100%;
-  /*background-color: #159957;
-  background-image: linear-gradient(120deg, #155799, #159957);*/ }
+  background-size:100%;*/
+  background-color: #159957;
+  /*background-image: linear-gradient(120deg, #155799, #159957); */
+  background-image: linear-gradient(120deg, #195794, #23b36b);
+}
 
 .cover{
   width: 100%;
@@ -85,7 +87,7 @@ a {
   top: 0;
   left: 0;
   z-index: 0;
-  background-color: rgba(0,0,0,0.1);
+  /*background-color: rgba(0,0,0,0.1);*/
 }
 
 @media screen and (min-width: 64em) {
@@ -143,7 +145,7 @@ a {
     
 .main-content p{
   font-size: 0.9rem;
-  color: #999;
+  color: #aaa;
 }
 .main-content :first-child {
   margin-top: 0; }
@@ -161,7 +163,7 @@ a {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: normal;
-  color: #A92424;
+  color: #319F81;;
    }
 .main-content p {
   margin-bottom: 1em; }
