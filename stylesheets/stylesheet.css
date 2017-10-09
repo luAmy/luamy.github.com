@@ -2,24 +2,24 @@
   box-sizing: border-box; }
 
 ::selection {
-  background-color:#319F81;
+  background-color:#48A8D9;
   color: #fff;
 }
 
 ::-moz-selection {
-  background-color:#319F81;
+  background-color:#48A8D9;
   color: #fff;
 }
 
 ::-webkit-selection {
-  background-color:#319F81;
+  background-color:#48A8D9;
   color: #fff;
 }
 
 body {
   padding: 0;
   margin: 0;
-  font-family: "Roboto","Microsoft JhengHei","Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Microsoft JhengHei","Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #606c71;
@@ -27,6 +27,7 @@ body {
 
 a {
   color: #3E7EAF;
+  cursor: pointer;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
@@ -72,11 +73,11 @@ a {
 .page-header {
   color: #fff;
   text-align: center;
-  /*background-color: #3E7EAF;
-  background:url(imgs/bg.jpg);
-  background-size:100%;*/
-  background-color: #159957;
-  background-image: linear-gradient(120deg, #155799, #159957); 
+  background-color: #f2f2f2;
+  background:url(imgs/bg2.jpg);
+  background-size:auto;
+  /*background-color: #159957;
+  background-image: linear-gradient(120deg, #155799, #159957); */
   /*background-image: linear-gradient(120deg, #195794, #23b36b);*/
 }
 
@@ -87,7 +88,7 @@ a {
   top: 0;
   left: 0;
   z-index: 0;
-  /*background-color: rgba(0,0,0,0.1);*/
+  background-color: rgba(0,0,0,0.05);
 }
 
 @media screen and (min-width: 64em) {
@@ -144,6 +145,7 @@ a {
     font-weight: 300; } }
     
 .main-content p{
+  position: relative;
   font-size: 0.9rem;
   color: #aaa;
 }
@@ -152,10 +154,20 @@ a {
 .main-content .date{
   float: right;
 }
-.main-content .qr{
+.main-content img{
+  /*position: absolute;*/
   display: block;
-  max-width: 5rem;
-  margin-top: 1rem;
+  width: 8rem;
+  left: 0;
+  height: 0;
+  transition: height .2s ease;
+}
+.main-content .qr{
+  height: 8rem;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+  padding: .2rem;
+  border: 1px solid #ddd;
 }
 .main-content img {
   max-width: 100%; }
@@ -163,7 +175,7 @@ a {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: normal;
-  color: #319F81;;
+  color: #48A8D9;
    }
 .main-content p {
   margin-bottom: 1em; }
