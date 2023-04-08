@@ -1,0 +1,1 @@
+import{o as e,c as o,a as t}from"./_@vue-8661df55.js";const a={viewBox:"0 0 1024 1024",width:"1.2em",height:"1.2em"},n=t("path",{fill:"currentColor",d:"M480 480V128a32 32 0 0 1 64 0v352h352a32 32 0 1 1 0 64H544v352a32 32 0 1 1-64 0V544H128a32 32 0 0 1 0-64h352z"},null,-1),c=[n];function s(r,_){return e(),o("svg",a,c)}var i={name:"ep-plus",render:s};export{i as _};
