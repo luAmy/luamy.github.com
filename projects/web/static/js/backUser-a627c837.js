@@ -1,1 +1,0 @@
-import{s as t}from"./request-67f9b1d0.js";import{g as r}from"./formatter-87423264.js";const o="/backUser",n=s=>t.post(`${o}/backLogin`,s),i=s=>t.get(`${o}/ownAssetsList${r(s)}`,{});export{n as b,i as o};
