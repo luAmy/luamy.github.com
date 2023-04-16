@@ -1,1 +1,0 @@
-import{y as r,z as t,A as _}from"./vendor.8a3e6c17.js";import{_ as o}from"./index.fed18ae1.js";const s={setup(a){const e=r();return t(),_(()=>{e.replace("/roomList")}),(u,n)=>null}};var d=o(s,[["__scopeId","data-v-667a6d3c"]]);export{d as default};
