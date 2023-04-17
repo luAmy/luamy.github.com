@@ -1,0 +1,1 @@
+import{s as t}from"./request-a1f5a8c6.js";const r="/admin/checkWork",k=e=>t.post(`${r}/updateCheckWork`,e),c=e=>t.get(`${r}/getCheckWork`,e),s=e=>t.get(`${r}/getCheckWorkList`,e);export{s as a,c as g,k as u};

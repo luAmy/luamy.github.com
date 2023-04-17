@@ -1,1 +1,0 @@
-import{s as t}from"./request-5ef38526.js";import{g as e}from"./formatter-87423264.js";const r="/admin/room",a=o=>t.get(`${r}/list${e(o)}`,{}),n=o=>t.post(`${r}/creatRoom`,o),p=o=>t.post(`${r}/delRoom`,o),c=o=>t.get(`${r}/roomType`,o),R=o=>t.post(`${r}/creatRoomType`,o),i=o=>t.post(`${r}/delRoomType`,o);export{a,R as b,n as c,p as d,i as e,c as r};
