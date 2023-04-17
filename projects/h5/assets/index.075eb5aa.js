@@ -1,0 +1,1 @@
+import{N as r,O as t,Q as _}from"./vendor.e7d04f51.js";import{_ as o}from"./index.016518c8.js";const s={setup(a){const e=r();return t(),_(()=>{e.replace("/bind")}),(n,u)=>null}};var d=o(s,[["__scopeId","data-v-66894186"]]);export{d as default};
